@@ -10,6 +10,15 @@
 #include <iomanip> // Setw
 #include <string>
 #include <fstream>
+#include <unistd.h>
+
+using namespace std;
+
+struct highScore {
+	string name;
+	string score;
+	string rank;
+};
 
 // Declare functions
 int practice (); 
@@ -23,10 +32,7 @@ int endOptionsPractice ();
 int endOptionsPlay ();
 void displayPoints (int point);
 
-using namespace std;
-
-int main () // Start main function
-{
+int main () { 			// Start main function
 	system("COLOR 8E");
 	int inputOptions;
 	string userName;
@@ -66,8 +72,7 @@ int main () // Start main function
 	return 0;
 }
 
-int practice ()
-{	
+int practice () {	
 	char optionPractice;
 	
 	cout << endl << endl << "   a. Addition";
@@ -104,8 +109,7 @@ int practice ()
 	return 0;
 }
 
-int addPractice ()
-{
+int addPractice () {
 	unsigned s = time(0);
 	srand(s);
 	int addAnswer;
@@ -135,8 +139,7 @@ int addPractice ()
     endOptionsPractice ();
 }
 
-int subPractice ()
-{
+int subPractice () {
 	unsigned s = time(0);
 	srand(s);
 	int subAnswer;
@@ -166,8 +169,7 @@ int subPractice ()
 	endOptionsPractice ();
 }
 
-int mulPractice ()
-{
+int mulPractice () {
 	unsigned s = time(0);
 	srand(s);
 	int mulAnswer;
@@ -197,8 +199,7 @@ int mulPractice ()
 	endOptionsPractice();
 }
 
-int divPractice () // unfinished
-{
+int divPractice () { 		// unfinished
 	unsigned s = time(0);
 	srand(s);
 	float divAnswer;
@@ -228,18 +229,7 @@ int divPractice () // unfinished
 	endOptionsPractice ();
 }
 
-void displayHighscore ()
-{
-	
-}
-
-int play ()
-{
-	return 0;
-}
-
-int endOptionsPractice ()
-{
+int endOptionsPractice () {
 	string yesno;
 	int backMenu;
 	
@@ -272,8 +262,7 @@ int endOptionsPractice ()
 	}
 }
 
-void displayPoints (int point)
-{
+void displayPoints (int point) {
 	cout << endl << " Score : " << point;
 	 if (point == 100){
 		cout << endl << " Excellent!! You got perfect score!!";
@@ -285,6 +274,19 @@ void displayPoints (int point)
 		cout << endl << " You need more practice.";
 	}
 }
+
+void displayHighscore () {
+	
+}
+
+int play () {
+	
+	
+	
+	return 0;
+}
+
+
 
 
 
