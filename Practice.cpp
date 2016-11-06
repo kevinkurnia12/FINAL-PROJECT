@@ -77,6 +77,20 @@ class Practice {
 			return points;
 		}
 		
+		void displayPoints (int practiceScore) 
+		{
+			cout << endl << " Score : " << practiceScore;
+	
+			if (practiceScore == 100)
+				cout << endl << " Excellent!! You got perfect score!!";
+			
+			else if (practiceScore >= 60 && practiceScore <= 100)
+				cout << endl << " Good work!!";
+			
+			else 
+				cout << endl << " You need more practice.";
+		}
+		
 		int endOptionsPractice () 
 		{
 			string yesno;
@@ -117,22 +131,7 @@ class Practice {
 				endOptionsPractice();
 			}
 		}
-	
-		void displayPoints (int practiceScore) 
-		{
-			cout << endl << " Score : " << practiceScore;
-	
-			if (practiceScore == 100)
-				cout << endl << " Excellent!! You got perfect score!!";
-			
-			else if (practiceScore >= 60 && practiceScore <= 100)
-				cout << endl << " Good work!!";
-			
-			else 
-				cout << endl << " You need more practice.";
-		}
 };
-
 
 int practice () 
 {	
@@ -141,10 +140,11 @@ int practice ()
 	srand(s);
 	Practice exercise;
 	
+	system ("CLS");
 	cout << endl << endl << "   a. Addition";
 	cout << endl << "   b. Subtraction";
 	cout << endl << "   c. Multiplication";
-	cout << endl << "   d. Exit the program";
+	cout << endl << "   d. Back to main menu";
 	cout << endl << endl << "  Which operations do you want to choose (a, b, c, d) ? ";
 	cin >> optionPractice;
 	
@@ -163,7 +163,7 @@ int practice ()
 			exercise.mulPractice();
 			break;
 		case 'd' :
-			exit(0);
+			main();
 		default :
 			cout << endl << " You choose the wrong option.\n\n" << " ";
 			system("PAUSE");
@@ -172,8 +172,5 @@ int practice ()
 			break;
 	}
 }
-
-
-
 
 

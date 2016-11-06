@@ -23,7 +23,7 @@ int main ()  // Start main function
 	int inputOptions;
 	string userName;
 	
-	system("COLOR 3E");
+	system("COLOR 0F");
 	cout << "\n\t\tQUICK COUNT GAME";  // Title of the Program
 	cout << "\n\n\n\tWelcome !\n\tEnter your name : ";  
 	getline (cin, userName);   // Store username
@@ -60,9 +60,5 @@ int main ()  // Start main function
 	}
 	getchar ();
 }
-
-
-	
-
 
 

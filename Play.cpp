@@ -63,7 +63,7 @@ class Play {
  			}}}
 		}
 
-		void level2(int num1, int num2, int num3, int operations1, int operations2, int score)
+		void level2(int num1, int num2, int num3, int operations1, int operations2, int scores)
 		{
 			if (operations1 == 1 && operations2 == 1) {
 				formula = num1 + num2 + num3;
@@ -89,40 +89,6 @@ class Play {
 				sign[1] = " - ";
 			}
 	
-			questionPlay(num1, num2, num3, formula, sign, score);
-		}
-
-		void level3(int num1, int num2, int num3, int operations1, int operations2, int score) 
-		{
-			if (operations1 == 1 && operations2 == 1) {
-				formula = num1 + num2 * num3;
-				sign[0] = " + ";
-				sign[1] = " x ";
-			}
-	
-			else if (operations1 == 1 && operations2 == 2) {
-				formula = num1 - num2 * num3;
-				sign[0] = " - ";
-				sign[1] = " x ";
-			}
-	
-			else if (operations1 == 2 && operations2 == 1) {
-				formula = num1 * num2 + num3;
-				sign[0] = " x ";
-				sign[1] = " + ";
-			}
-	
-			else if (operations1 == 2 && operations2 == 2) {
-				formula = num1 * num2 - num3;
-				sign[0] = " x ";
-				sign[1] = " - ";
-			}
-	
-			questionPlay(num1, num2, num3, formula, sign, score);
-		}
-
-		void questionPlay(int num1, int num2, int num3, int formula, string sign[], int scores)
-		{
 			cout << endl << "\tTimer : 3 sec" << endl;
 			cout << "\t" << num1 << sign[0] << num2 << sign[1] << num3 << " = ";
 			timer(scores);
@@ -153,6 +119,64 @@ class Play {
 								endOptionsPlay(); 
 								exit(0);		
 			}}}
+		}
+
+		void level3(int num1, int num2, int num3, int operations1, int operations2, int scores) 
+		{
+			if (operations1 == 1 && operations2 == 1) {
+				formula = num1 + num2 * num3;
+				sign[0] = " + ";
+				sign[1] = " x ";
+			}
+	
+			else if (operations1 == 1 && operations2 == 2) {
+				formula = num1 - num2 * num3;
+				sign[0] = " - ";
+				sign[1] = " x ";
+			}
+	
+			else if (operations1 == 2 && operations2 == 1) {
+				formula = num1 * num2 + num3;
+				sign[0] = " x ";
+				sign[1] = " + ";
+			}
+	
+			else if (operations1 == 2 && operations2 == 2) {
+				formula = num1 * num2 - num3;
+				sign[0] = " x ";
+				sign[1] = " - ";
+			}
+	
+			cout << endl << "\tTimer : 3 sec" << endl;
+			cout << "\t" << num1 << sign[0] << num2 << sign[1] << num3 << " = ";
+			timer(scores);
+			cin >> answer;
+			system ("CLS");
+	
+			if (answer != formula) {
+				cout << endl << "\tTimer : 3 sec" << endl;
+				cout << "\tTry Again!" << endl;
+				cout << "\t" << num1 << sign[0] << num2 << sign[1] << num3 << " = ";
+				timer(scores);
+				cin >> answer;
+				system ("CLS");
+				
+					if (answer != formula) {
+						cout << endl << "\tTimer : 3 sec" << endl;
+						cout << "\tTry Again!" << endl;
+						cout << "\t" << num1 << sign[0] << num2 << sign[1] << num3 << " = ";
+						timer(scores);
+						cin >> answer;
+						system("CLS");
+						
+							if (answer != formula) {
+								cout << endl << "\tGAME OVER!!\n  You have wrong 3 times!\n\n\t";
+								cout << "Score : " << scores << endl << endl;
+								Sleep(1500);
+								system("PAUSE");
+								endOptionsPlay(); 
+								exit(0);		
+			}}}	
 		}
 
 		void timer(int scores) 
@@ -255,9 +279,4 @@ int play(){
 	}
 	
 }
-
-
-
-
-
 		
